@@ -7,14 +7,14 @@ def pascal_triangle(n):
     if n <= 0:
         return []
 
-    triangle = [[1]]
+    tri = [[1]]
 
     for row_nbr in range(1, n):
         row = [1]
-        for col_index in range(1, row_nbr):
-            element = triangle[row_nbr - 1][col_index - 1] + triangle[row_nbr - 1][col_index]
+        for col_ndx in range(1, row_nbr):
+            element = tri[row_nbr - 1][col_ndx - 1] + tri[row_nbr - 1][col_ndx]
             row.append(element)
         row.append(1)
-        triangle.append(row)
+        tri.append(row)
 
-    return triangle
+    return tri
