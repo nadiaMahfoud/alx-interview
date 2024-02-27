@@ -16,8 +16,8 @@ Line list format: [<IP>, -, [<date>], "GET /projects/260 HTTP/1.1",
 
 import sys
 
-total_size = 0 # Accumulate the total file size
-count = 0 # Keep count of the number of lines processed
+total_size = 0
+count = 0
 # Initialize a dictionary to store the count of each status code
 status_codes_dict = {'200': 0, '301': 0, '400': 0, '401': 0, '403': 0,
                      '404': 0, '405': 0, '500': 0}
@@ -30,7 +30,8 @@ try:
             status_code = line_list[-2]
             file_size = int(line_list[-1])
 
-            # Check if the status code exists in the dictionary and increment its count
+            # Check if the status code exists in the dictionary and
+            # increment its count
             if status_code in status_codes_dict:
                 status_codes_dict[status_code] += 1
 
